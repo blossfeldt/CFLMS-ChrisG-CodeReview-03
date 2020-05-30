@@ -174,7 +174,8 @@
 }
 
 #promo_left, #promo_right {
-  border: 2px solid;
+  border: 1px solid;
+  box-shadow: 3px 3px 3px 3px #dedede;
   padding: 1.5em;
   max-width: 18em;
   font-size: 1.05em;
