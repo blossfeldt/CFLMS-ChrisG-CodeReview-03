@@ -18,8 +18,6 @@ class team_member {
         this.position = position;
         team_array.push(this);
     }
-
-
 }
 
 new team_member("Fran",35,"fran@index.com","img/person1.jpg","reading and playing chess","red","CEO");
@@ -31,7 +29,31 @@ var msg;
 
 for (var i = 0; i < team_array.length; i++) {
 	var person = team_array[i];
-	msg = "<div><img src=\'"+person.image+"\'></div><div>Hi. My name is "+person.name+" and i am "+person.age+" years.<br>I\'m "+person.position+". My favourite color is "+person.favourite_color+" and i like "+person.hobbies+".<br>Feel free to contact me anytime:<br><a href=\"mailto:"+person.email+"\">"+person.email+"</a></div>";
-	console.log(msg);
+	msg = "<div class=\"toggle_more\"><img src=\'"+person.image+"\'></div><div>"+
+	"<div class=\"more_info\">Hi. My name is "+person.name+" and i am "+person.age+" years.<br>"+
+	"I\'m "+person.position+". My favourite color is "+person.favourite_color+
+	" and i like "+person.hobbies+".<br>Feel free to contact me anytime:<br></div>"+
+	"<a href=\"mailto:"+person.email+"\">"+person.email+"</a></div>";
 	team.item(i).innerHTML = msg;
+}
+
+var toggle_info = document.getElementsByClassName('toggle_more');
+var more_info = document.getElementsByClassName('more_info');
+
+for (var i = 0; i < toggle_info.length; i++) {
+    (function () {
+    	var j = i;
+        toggle_info[i].addEventListener('click',function(){
+		display_more_info(j);
+	}, false);
+    }()); // immediate invocation
+}
+
+function display_more_info(i) {
+	var item = more_info[i].style;
+	if (item.display == "none") {
+		item.display = "block";
+	} else {
+		item.display = "none";
+	}
 }
