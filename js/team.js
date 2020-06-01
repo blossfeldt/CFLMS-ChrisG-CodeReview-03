@@ -38,19 +38,14 @@ for (var i = 0; i < team_array.length; i++) {
 }
 
 var toggle_info = document.getElementsByClassName('toggle_more');
-var more_info = document.getElementsByClassName('more_info');
-
 for (var i = 0; i < toggle_info.length; i++) {
-    (function () {
-    	var j = i;
-        toggle_info[i].addEventListener('click',function(){
-		display_more_info(j);
-	}, false);
-    }()); // immediate invocation
-}
+    	let index = i;
+        toggle_info[i].addEventListener('click',function(){ toggle_display(index) }, false);
+	}
 
-function display_more_info(i) {
-	var item = more_info[i].style;
+var more_info = document.getElementsByClassName('more_info');
+function toggle_display(i) {
+	let item = more_info[i].style;
 	if (item.display == "none") {
 		item.display = "block";
 	} else {
