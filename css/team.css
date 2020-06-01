@@ -49,4 +49,23 @@
   display: none;
 }
 
+.overlay {
+  position: absolute;
+  margin-top: -3.6%;
+  width: 16.9%;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.toggle_more:hover .overlay {
+  opacity: 1;
+}
+
 /*# sourceMappingURL=team.css.map */
