@@ -44,11 +44,15 @@ for (var i = 0; i < toggle_info.length; i++) {
 	}
 
 var more_info = document.getElementsByClassName('more_info');
+var overlay_items = document.getElementsByClassName('overlay');
 function toggle_display(i) {
 	let item = more_info[i].style;
+	let overlay = overlay_items[i].style;
 	if (item.display == "none") {
 		item.display = "block";
+		overlay.display = "none"; // Workaround ,beacuse first action nees 2 clicks
 	} else {
 		item.display = "none";
+		overlay.display = "flex";
 	}
 }
