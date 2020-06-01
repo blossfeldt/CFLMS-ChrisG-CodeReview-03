@@ -50,7 +50,7 @@ function toggle_display(i) {
 	let overlay = overlay_items[i].style;
 	if (item.display == "none") {
 		item.display = "block";
-		overlay.display = "none"; // Workaround ,beacuse first action nees 2 clicks
+		overlay.display = "none"; // Workaround ,beacuse first action needs 2 clicks
 	} else {
 		item.display = "none";
 		overlay.display = "flex";
