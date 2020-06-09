@@ -29,11 +29,21 @@ var msg;
 
 for (var i = 0; i < team_array.length; i++) {
 	var person = team_array[i];
-	msg = "<div class=\"toggle_more\"><img src=\'"+person.image+"\'><div class=\"overlay\">Show more</div></div><div>"+
-	"<div class=\"more_info\">Hi. My name is "+person.name+" and i am "+person.age+" years.<br>"+
-	"I\'m "+person.position+". My favourite color is "+person.favourite_color+
-	" and i like "+person.hobbies+".<br>Feel free to contact me anytime:<br></div>"+
-	"<a href=\"mailto:"+person.email+"\">"+person.email+"</a></div>";
+	msg = `
+    <div class=toggle_more>
+        <img src="${person.image}">
+        <div class=overlay>Show more</div>
+    </div>
+    <div>
+        <div class=more_info>
+            Hi. My name is <strong>${person.name}</strong> and i am ${person.age} years.<br>
+            I'm <strong>${person.position}</strong>. My favourite color is ${person.favourite_color} 
+            and i like ${person.hobbies}.<br>
+            Feel free to contact me anytime:<br>
+        </div>
+        <a href=mailto:${person.email}>${person.email}</a>
+    </div>
+    `;
 	team.item(i).innerHTML = msg;
 }
 
