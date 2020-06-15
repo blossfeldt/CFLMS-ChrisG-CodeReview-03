@@ -58,6 +58,9 @@ var overlay_items = document.getElementsByClassName('overlay');
 function toggle_display(i) {
 	let item = more_info[i].style;
 	let overlay = overlay_items[i].style;
+    if (!item.display) {
+        item.display = "none";
+    };
 	if (item.display == "none") {
 		item.display = "block";
 		overlay.display = "none"; // Workaround ,beacuse first action needs 2 clicks
